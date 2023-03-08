@@ -33,7 +33,7 @@ exports.login = async (req, res, next) => {
 
 exports.updateProfileImage = async (req, res, next) => {
     try {
-        const responsePayload = await userService.fileUpload(req.params.id, req.file.path);
+        const responsePayload = await userService.fileUpload(req.params.id,req.file.path, req.file.mimetype);
 
         return response.success(res, responsePayload, 'success');
     } catch (error) {
